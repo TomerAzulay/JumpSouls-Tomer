@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float movementPower = 15;
     public int score;
     public int CoinsCount;
-   
-    
+    public int health = 3;
+    public platformDestroyer platformDestroyer;
+
+
 
     public Transform playerLocation;
 
@@ -41,7 +43,11 @@ public class PlayerMovement : MonoBehaviour
         //check score is the highest score of the player. mathf is the transform float turning to int .
         ScoreSys();
 
-        
+        if (health <=0)
+        {
+            Destroy(gameObject);
+            FindObjectOfType<platformDestroyer>().CanvasOn();
+        }
         
 
        

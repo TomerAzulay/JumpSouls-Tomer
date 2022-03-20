@@ -7,7 +7,7 @@ public class platformScript : MonoBehaviour
 {
     [Range( 5,20)]
     public float jumpForce;
-
+    
 // Start is called before the first frame update
 void Start()
     {
@@ -31,7 +31,7 @@ void Start()
                 rb.velocity = newVelocity;
             }
             
-            
+
         }
     }
 }

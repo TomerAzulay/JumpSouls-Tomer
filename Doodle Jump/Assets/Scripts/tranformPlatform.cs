@@ -34,13 +34,13 @@ public class tranformPlatform : MonoBehaviour
     {
         if (move)
         {
-            transform.Translate(2.5f*Time.deltaTime, 0, 0);
+            transform.Translate(8f*Time.deltaTime, 0, 0);
             if (transform.position.x>= 2.8f) 
                 move = false;
         }
         else
         {
-            transform.Translate(-2.5f * Time.deltaTime, 0, 0);
+            transform.Translate(-8f * Time.deltaTime, 0, 0);
             if (transform.position.x<= -2.8)
 
                 move = true;

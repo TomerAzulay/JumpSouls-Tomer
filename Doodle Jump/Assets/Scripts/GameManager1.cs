@@ -15,6 +15,10 @@ public class GameManager1 : MonoBehaviour
     // enemy variabels
     public GameObject enemyPrefab;
     public Vector3 spawnEnemyPos;
+    //
+    public GameObject bonFirePrefab;
+    public Vector3 bonFirePos;
+    public GameObject litCanvas;
     
     void Start()
     {
@@ -54,6 +58,11 @@ public class GameManager1 : MonoBehaviour
             {
                 CreateEnemies();
             }
+        }
+        //bonFire creation
+        if (playerTransform.position.y > spawnEnemyPos.y - 15)
+        {
+            CreateBonFire();
         }
     }
     //  Functions :
@@ -97,6 +106,22 @@ public class GameManager1 : MonoBehaviour
         spawnEnemyPos.x = randx;
         
         Instantiate(enemyPrefab, spawnEnemyPos, Quaternion.identity);
+
+    }
+    void CreateBonFire()
+    {
+        float randx = Random.Range(-3.5f, 3.5f);
+        float randy = Random.Range(30, 40);
+
+        bonFirePos.y += randy;
+        bonFirePos.x = randx;
+
+        Instantiate(bonFirePrefab, bonFirePos, Quaternion.identity);
+
+    }
+    public void BonfireCanvas()
+    {
+        litCanvas.SetActive(true);
 
     }
 }

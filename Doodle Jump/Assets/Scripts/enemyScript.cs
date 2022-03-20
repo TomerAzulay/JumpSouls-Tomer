@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class enemyScript : MonoBehaviour
 {
-    public GameObject lostCanvas;
-    public platformDestroyer platformDestroyer;
+    
+    public PlayerMovement playerMovement;
 
     private void Start()
     {
-          
+        
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        
         if (other.GetComponent<PlayerMovement>())
         {
+
             Destroy(other.gameObject);
             FindObjectOfType<platformDestroyer>().CanvasOn();
-            
         }
 
     }

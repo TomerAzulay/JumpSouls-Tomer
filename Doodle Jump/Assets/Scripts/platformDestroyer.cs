@@ -5,7 +5,8 @@ using UnityEngine;
 public class platformDestroyer : MonoBehaviour
 {
     public GameObject lostCanvas;
-   
+    public GameObject litCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,24 @@ public class platformDestroyer : MonoBehaviour
 
 
         }
+        if (other.CompareTag("Bonfire"))
+        {
+            litCanvas.SetActive(false);
+        }
     }
     public void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<PlayerMovement>())
         {
             CanvasOn();
-
+            int endScore = other.GetComponent<PlayerMovement>().score;
+            if (endScore>PlayerPrefs.GetInt("HS"))
+            {
+                PlayerPrefs.SetInt("HS", endScore);
+            }
         }
     }
-    // Update is called once per frame
+    
     void Update()
     {
         

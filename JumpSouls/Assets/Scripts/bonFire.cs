@@ -29,6 +29,7 @@ public class bonFire : MonoBehaviour
                 sparkslit.SetActive(true);
                 litOff.SetActive(false);
                 FindObjectOfType<GameManager1>().BonfireCanvas();
+                GetComponent<AudioSource>().Play();
             }
             if (other.CompareTag("Platform"))
             {

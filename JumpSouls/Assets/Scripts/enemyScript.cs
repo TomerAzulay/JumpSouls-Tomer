@@ -16,7 +16,7 @@ public class enemyScript : MonoBehaviour
         
         if (other.GetComponent<PlayerMovement>())
         {
-
+            GetComponent<AudioSource>().Play();
             Destroy(other.gameObject);
             FindObjectOfType<platformDestroyer>().CanvasOn();
         }

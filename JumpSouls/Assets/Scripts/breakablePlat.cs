@@ -19,6 +19,7 @@ public class breakablePlat : MonoBehaviour
                 newVelocity.y = jumpForce;
                 rb.velocity = newVelocity;
                 Destroy(gameObject);
+                GetComponent<AudioSource>().Play();
             }
 
 

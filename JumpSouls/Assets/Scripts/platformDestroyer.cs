@@ -47,6 +47,6 @@ public class platformDestroyer : MonoBehaviour
     public void CanvasOn()
     {
         lostCanvas.SetActive(true);
-
+        GetComponent<AudioSource>().Play();
     }
 }

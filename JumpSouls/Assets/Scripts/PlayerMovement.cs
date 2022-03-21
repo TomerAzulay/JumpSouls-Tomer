@@ -26,10 +26,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.GetComponent<CoinScirpt>())
         {
+            
             CoinsCount = CoinsCount + 10;
         }
-    }
 
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<CoinScirpt>())
+        {
+
+            GetComponent<AudioSource>().Play();
+        }
+    }
     void Update()
     {
         // 

@@ -24,7 +24,7 @@ public class tranformPlatform : MonoBehaviour
                 Vector3 newVelocity = rb.velocity;
                 newVelocity.y = jumpForce;
                 rb.velocity = newVelocity;
-                
+                GetComponent<AudioSource>().Play();
             }
 
 
